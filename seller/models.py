@@ -26,7 +26,7 @@ class Seller(models.Model):
             no_of_visits += s.visits
             carts += s.cart_no
             total_revenue += s.product.price*s.sale
-        return {'no_of_sale' : no_of_sale , 'no_of_visits' : no_of_visits , 'carts' : carts , 'total_revenue' : total_revenue , 'view_to_sale' : round((no_of_sale/no_of_visits)*100,2),  }
+        return {'no_of_sale' : no_of_sale , 'no_of_visits' : no_of_visits , 'carts' : carts , 'total_revenue' : total_revenue , 'view_to_sale' : round((no_of_sale/(no_of_visits+1))*100,2),  }
 
 
 

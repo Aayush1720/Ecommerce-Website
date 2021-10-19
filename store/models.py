@@ -7,10 +7,10 @@ class Customer(models.Model):
     email = models.CharField(max_length=150,null=True)
     def __str__(self):
         return self.name
-
-
+s
 
 class Product(models.Model):
+    pid = models.IntegerField(null=False, unique=True, primary_key=True)
     name = models.CharField(max_length=150, null=True)
     price = models.FloatField()
     image1 = models.ImageField(null=True, blank=True,upload_to='images/')

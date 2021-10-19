@@ -115,11 +115,12 @@ def add_product(request):
         else:
             digi = False
         new_product = Product(
+            
             name = data.get('name'),
             price = data.get('price'),
-            image = image,
+            image1 = image,
             digital = digi,
-            note = data.get('note'),
+            note = data.get('note').lower(),
         )
         new_product.save()
         all_tags = Tag.objects.all()
